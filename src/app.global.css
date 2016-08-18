@@ -1,0 +1,5 @@
+ @import "milligram";
+
+ :global html {
+     font-size: responsive 12px 18px;
+ }

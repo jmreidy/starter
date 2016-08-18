@@ -1,0 +1,1 @@
+Use Ducks for redux setup. See [https://github.com/erikras/ducks-modular-redux](Ducks).
