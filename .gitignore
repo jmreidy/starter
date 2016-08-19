@@ -1,5 +1,8 @@
-.idea/
-
 coverage/
 node_modules/
 dist
+
+#IDEs
+.idea/
+starter.iml
+
