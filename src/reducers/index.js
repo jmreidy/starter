@@ -1,17 +1,11 @@
-import { createStore, applyMiddleware } from 'redux';
-import { createEpicMiddleware } from 'redux-observable';
-import { rootEpic, rootReducer } from '../redux/modules/root';
+import { combineReducers } from 'redux';
 
-const epicMiddleware = createEpicMiddleware(rootEpic);
+import pingPong from './pingPong';
+import root from './root';
 
-const configureStore = () => {
-  console.log('configuring store!');
-  const store = createStore(
-    rootReducer,
-    applyMiddleware(epicMiddleware)
-  );
+const appReducer = combineReducers({
+  root,
+  pingPong,
+});
 
-  return store;
-};
-
-export default configureStore;
+export default appReducer;

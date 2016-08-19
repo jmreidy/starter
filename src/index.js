@@ -1,18 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader'
+import { AppContainer as ReactRoot } from 'react-hot-loader';
 
-import App from './components/App';
+// Import Rx; Allows us to use chained observable methods
+// eslint-disable-next-line no-unused-vars
+import Rx from 'rxjs';
+
+// Import styles that will be in the global css scope
+// eslint-disable-next-line no-unused-vars
 import globalStyles from './app.global.css';
-import configureStore from './reducers'
+
+import configureStore from './configureStore';
+
+import Routes from './routes';
 
 const store = configureStore();
 
 const render = () => {
   ReactDOM.render(
-    <AppContainer>
-      <App store={store} />
-    </AppContainer>,
+    <ReactRoot>
+      <Routes store={store} />
+    </ReactRoot>,
     document.getElementById('root')
   );
 };
@@ -21,5 +29,5 @@ render();
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./components/App', render);
+  module.hot.accept('./containers/App/AppContainer', render);
 }
