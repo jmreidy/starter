@@ -3,6 +3,7 @@ An opinionated React Redux project starter.
 For devops, uses:
 
 * Webpack
+* HMR with Webpack Dev Server and React Hot Loader
 * Babel
 * Flow (not yet implemented)
 
